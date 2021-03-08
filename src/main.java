@@ -1,17 +1,17 @@
 import java.sql.SQLException;
 
 import com.mysql.jdbc.Statement;
+import serveurs.DAO.*;
 
-import serveurs.DAO.MysqlConnect;
 
 public class main {
 
 	public static void main(String[] args) throws SQLException {
-		// TODO Auto-generated method stub
-		Statement statement;
-		System.out.println(MysqlConnect.getDbCon());
-		
-		System.out.println(MysqlConnect.query("select * from Banque;"));
+//		System.out.println(MagasinDAO.getMagasins());
+//		System.out.println(PanierDAO.addPanier(1,1,1));
+//		System.out.println(ProduitDAO.getQuantityProduit(1));
+//		System.out.println(ProduitDAO.removeQuantityProduit(1, 30));
+		System.out.println(ClientMagasinDAO.toConnectMagasin("jager.eren@original.fr", "azerty"));
 	}
 
 }

@@ -5,12 +5,16 @@ import java.util.HashMap;
 public class Panier {
 	int idPanier;
 	int idClient;
-	HashMap<Integer,Integer> tabProd = new HashMap<Integer,Integer>();
-	
-	public Panier(int idPanier, int idClient,  HashMap<Integer,Integer> tabProd) {
+	Produit produit;
+	int qteProduit;
+
+
+
+	public Panier(int idPanier, int idClient, Produit produit , int qteProduit) {
 		this.idPanier = idPanier;
 		this.idClient = idClient;
-		this.tabProd = tabProd;
+		this.produit = produit;
+		this.qteProduit = qteProduit;
 		//this.idProduit = idProduit;
 		//this.qteProduit = qteProduit;
 	}
@@ -31,13 +35,22 @@ public class Panier {
 		this.idClient = idClient;
 	}
 
-	public HashMap<Integer, Integer> getTabProd() {
-		return tabProd;
+	public Produit getProduit() {
+		return produit;
 	}
 
-	public void setTabProd(HashMap<Integer, Integer> tabProd) {
-		this.tabProd = tabProd;
+	public void setProduit(Produit produit) {
+		this.produit = produit;
 	}
+
+	public int getQteProduit() {
+		return qteProduit;
+	}
+
+	public void setQteProduit(int qteProduit) {
+		this.qteProduit = qteProduit;
+	}
+
 
 	
 	

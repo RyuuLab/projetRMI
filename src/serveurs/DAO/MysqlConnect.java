@@ -3,8 +3,6 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public final class MysqlConnect {
     public Connection conn;
@@ -31,16 +29,5 @@ public final class MysqlConnect {
             db = new MysqlConnect();
         }
         return db;
-    }
-    
-    public static ResultSet query(String query) throws SQLException{
-        statement = (Statement) db.conn.createStatement();
-        ResultSet res = statement.executeQuery(query);
-        while(res.next()) {
-        	System.out.println(res.getDouble("idBanque"));
-        	System.out.println(res.getString("nom"));
-        	  }
-        return res;
-       
     }
 }

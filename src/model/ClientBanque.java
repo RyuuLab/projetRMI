@@ -15,6 +15,13 @@ public class ClientBanque {
 		this.mdp = mdp;
 	}
 
+	public ClientBanque(int idBanque, int idClientBanque, int cb, int cvv) {
+		this.idBanque = idBanque;
+		this.idClientBanque = idClientBanque;
+		this.cb = cb;
+		this.cvv = cvv;
+	}
+
 	public int getIdBanque() {
 		return idBanque;
 	}

@@ -7,13 +7,20 @@ public class ClientMagasin {
 	String prenom;
 	String email;
 	String mdp;
-	
+
 	public ClientMagasin (int idClientMagasin, String nom, String prenom, String email, String mdp) {
 		this.idClientMagasin = idClientMagasin;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.mdp = mdp;
+	}
+
+	public ClientMagasin (int idClientMagasin, String nom, String prenom, String email) {
+		this.idClientMagasin = idClientMagasin;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
 	}
 
 	public int getIdClientMagasin() {
@@ -55,6 +62,16 @@ public class ClientMagasin {
 	public void setMdp(String mdp) {
 		this.mdp = mdp;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "ClientMagasin{" +
+				"idClientMagasin=" + idClientMagasin +
+				", nom='" + nom + '\'' +
+				", prenom='" + prenom + '\'' +
+				", email='" + email + '\'' +
+				", mdp='" + mdp + '\'' +
+				'}';
+	}
+
 }

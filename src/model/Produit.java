@@ -7,7 +7,7 @@ public class Produit {
 	String nom;
 	double prix;
 	int quantite;
-	
+
 	public Produit(int idProduit, int idMagasin, String imageProduit, String nom, double prix, int quantite) {
 		this.idProduit = idProduit;
 		this.idMagasin = idMagasin;
@@ -64,7 +64,25 @@ public class Produit {
 	public void setQuantite(int quantite) {
 		this.quantite = quantite;
 	}
-	
-	
-	
+
+	public static boolean removeQteProduit(int qteInit, int qteToRemove) {
+		if(qteInit < qteToRemove) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	@Override
+	public String toString() {
+		return "Produit{" +
+				"idProduit=" + idProduit +
+				", idMagasin=" + idMagasin +
+				", imageProduit='" + imageProduit + '\'' +
+				", nom='" + nom + '\'' +
+				", prix=" + prix +
+				", quantite=" + quantite +
+				'}';
+	}
+
 }

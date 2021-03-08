@@ -5,7 +5,7 @@ public class Magasin {
 	String nomMagasin;
 	String adresse;
 	String ville;
-	
+
 	public Magasin(int idMagasin, String nomMagasin, String adresse, String ville) {
 		this.idMagasin = idMagasin;
 		this.nomMagasin = nomMagasin;
@@ -43,6 +43,16 @@ public class Magasin {
 
 	public void setVille(String ville) {
 		this.ville = ville;
+	}
+
+	@Override
+	public String toString() {
+		return "Magasin{" +
+				"idMagasin=" + idMagasin +
+				", nomMagasin='" + nomMagasin + '\'' +
+				", adresse='" + adresse + '\'' +
+				", ville='" + ville + '\'' +
+				'}';
 	}
 	
 	
