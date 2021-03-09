@@ -48,7 +48,7 @@ public class Connexion {
 		Main m = new  Main();
 		if(identifiant.getText().toString().equals("abc") && mdp.getText().toString().equals("123")) {
 			erreur.setText("Succès");
-			m.changeScene("Magasin1.fxml");
+			m.changeScene("../vues/Magasin1.fxml");
 		}
 		else if (identifiant.getText().isEmpty() && mdp.getText().isEmpty()) {
 			erreur.setText("Champs manquants");

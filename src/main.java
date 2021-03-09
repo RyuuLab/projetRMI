@@ -1,17 +1,24 @@
+import java.rmi.Naming;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.sql.SQLException;
 
-import com.mysql.jdbc.Statement;
 import serveurs.DAO.*;
+import serveurs.banque.interfaces.BanqueInterface;
+import serveurs.magasin.interfaces.MagasinInterface;
 
 
 public class main {
 
 	public static void main(String[] args) throws SQLException {
-//		System.out.println(MagasinDAO.getMagasins());
-//		System.out.println(PanierDAO.addPanier(1,1,1));
-//		System.out.println(ProduitDAO.getQuantityProduit(1));
-//		System.out.println(ProduitDAO.removeQuantityProduit(1, 30));
-		System.out.println(ClientMagasinDAO.toConnectMagasin("jager.eren@original.fr", "azerty"));
+		try{
+			BanqueInterface banqueInterface = (BanqueInterface) Naming.lookup("rmi://localhost:9005/banque");
+			System.out.println(banqueInterface.getBanque(1));
+		}
+		catch (Exception e)
+		{
+			System.out.println ("banque exception: " + e);
+		}
 	}
 
 }

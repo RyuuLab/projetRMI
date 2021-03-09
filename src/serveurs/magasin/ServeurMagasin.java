@@ -14,10 +14,9 @@ public class ServeurMagasin {
 		// TODO Auto-generated method stub
 		try {
             int port = 9008;
-
-            MagasinController obj = new MagasinController();
+            MagasinController magasinController = new MagasinController();
             LocateRegistry.createRegistry(port);
-            Naming.rebind("rmi://localhost:"+port+"/magasin", obj);
+            Naming.rebind("rmi://localhost:"+port+"/magasin", magasinController);
             System.out.println (" Serveur Pret");
         }
         catch (RemoteException e) { System.out.println (e.getMessage()); }

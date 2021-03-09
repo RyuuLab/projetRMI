@@ -13,7 +13,6 @@ public class ServeurBanque {
 		// TODO Auto-generated method stub
 		try {
             int port = 9005;
-
             BanqueController obj = new BanqueController();
             LocateRegistry.createRegistry(port);
             Naming.rebind("rmi://localhost:"+port+"/banque", obj);
