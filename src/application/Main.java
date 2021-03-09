@@ -6,7 +6,6 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
 
 
@@ -31,7 +30,7 @@ public class Main extends Application {
 		
 		Parent root;
 		try {
-			root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
+			root = FXMLLoader.load(getClass().getResource("../vues/Connexion.fxml"));
 			primaryStage.setTitle("Connexion");
 			primaryStage.setScene(new Scene(root,600,700));
 			primaryStage.show();
