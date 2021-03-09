@@ -12,8 +12,10 @@ import javafx.fxml.FXMLLoader;
 
 public class Main extends Application {
 	
+	private static Stage stg;
+	
 	@Override
-	public void start(Stage primaryStage) {
+	public void start(Stage primaryStage) throws Exception {
 		/*try {
 			BorderPane root = new BorderPane();
 			Scene scene = new Scene(root,400,400);
@@ -24,20 +26,28 @@ public class Main extends Application {
 			e.printStackTrace();
 		}*/
 		
+		stg = primaryStage;
+		primaryStage.setResizable(false);
+		
 		Parent root;
 		try {
 			root = FXMLLoader.load(getClass().getResource("Connexion.fxml"));
-			primaryStage.setScene(new Scene(root,800,600));
+			primaryStage.setTitle("Connexion");
+			primaryStage.setScene(new Scene(root,600,700));
 			primaryStage.show();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-	
-		
-		
 	}
+	
+	
+	public void changeScene(String fxml) throws IOException {
+		Parent pane = FXMLLoader.load(getClass().getResource(fxml));
+		stg.getScene().setRoot(pane);
+	}
+	
 	
 	public static void main(String[] args) {
 		launch(args);

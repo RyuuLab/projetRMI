@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="899.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane gridLinesVisible="true" layoutX="51.0" layoutY="106.0" prefHeight="500.0" prefWidth="800.0">
         <columnConstraints>
@@ -38,7 +38,7 @@
                <children>
                   <ImageView fitHeight="124.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@../../../4300.jpg" />
+                        <Image url="@../../../../../../4300.jpg" />
                      </image>
                   </ImageView>
                   <Label text="Produit1" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
@@ -321,5 +321,6 @@
          </font>
       </Button>
       <ComboBox layoutX="51.0" layoutY="35.0" prefWidth="150.0" promptText="Choix du magasin" />
+      <Label layoutX="857.0" layoutY="35.0" prefHeight="25.0" prefWidth="21.0" text="0" />
    </children>
 </AnchorPane>
