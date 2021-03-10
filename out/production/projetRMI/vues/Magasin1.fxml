@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Magasin1">
    <children>
       <GridPane gridLinesVisible="true" layoutX="51.0" layoutY="106.0" prefHeight="500.0" prefWidth="800.0">
         <columnConstraints>
@@ -36,39 +36,49 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <ImageView fitHeight="124.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <ImageView fx:id="img1" fitHeight="124.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <image>
                         <Image url="@../../../../../../4300.jpg" />
                      </image>
                   </ImageView>
-                  <Label text="Produit1" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Label fx:id="label1" text="Produit1" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="LEFT">
+                  <Button fx:id="plus1" mnemonicParsing="false" onAction="#PlusUn" text="+" GridPane.columnIndex="2" GridPane.halignment="LEFT">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </Button>
-                  <TextField maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                  <TextField fx:id="qte1" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="50.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Button mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                  <Button fx:id="moins1" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="20.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Button fx:id="addPanier1" mnemonicParsing="false" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets top="80.0" />
                      </GridPane.margin>
                   </Button>
-                  <Label text="450,00€" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Label fx:id="labelPrix1" text="450,00€" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets top="100.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Quantité restante :" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets top="20.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="labelQte1" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets top="40.0" />
                      </GridPane.margin>
                   </Label>
                </children>
@@ -83,39 +93,49 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <ImageView fitHeight="124.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <ImageView fx:id="img2" fitHeight="124.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <image>
                         <Image url="@../../../4300.jpg" />
                      </image>
                   </ImageView>
-                  <Label text="Produit2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Label fx:id="label2" text="Produit2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="LEFT">
+                  <Button fx:id="plus2" mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="LEFT">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </Button>
-                  <TextField maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                  <TextField fx:id="qte2" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="50.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Button mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                  <Button fx:id="moins2" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="20.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Button fx:id="addPanier2" mnemonicParsing="false" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets top="80.0" />
                      </GridPane.margin>
                   </Button>
-                  <Label text="450,00€" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Label fx:id="labelPrix2" text="450,00€" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets top="100.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Quantité restante :" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets top="20.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="labelQte2" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets top="40.0" />
                      </GridPane.margin>
                   </Label>
                </children>
@@ -130,39 +150,49 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <ImageView fitHeight="124.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <ImageView fx:id="img3" fitHeight="124.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <image>
                         <Image url="@../../../4300.jpg" />
                      </image>
                   </ImageView>
-                  <Label text="Produit3" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Label fx:id="label3" text="Produit3" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="LEFT">
+                  <Button fx:id="plus3" mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="LEFT">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </Button>
-                  <TextField maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                  <TextField fx:id="qte3" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="50.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Button mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                  <Button fx:id="moins3" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="20.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Button fx:id="addPanier3" mnemonicParsing="false" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets top="80.0" />
                      </GridPane.margin>
                   </Button>
-                  <Label text="450,00€" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Label fx:id="labelPrix3" text="450,00€" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets top="100.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Quantité restante :" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="labelQte3" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets top="40.0" />
                      </GridPane.margin>
                   </Label>
                </children>
@@ -177,39 +207,49 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <ImageView fitHeight="124.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <ImageView fx:id="img4" fitHeight="124.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <image>
                         <Image url="@../../../4300.jpg" />
                      </image>
                   </ImageView>
-                  <Label text="Produit4" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Label fx:id="label4" text="Produit4" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="LEFT">
+                  <Button fx:id="plus4" mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="LEFT">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </Button>
-                  <TextField maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                  <TextField fx:id="qte4" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="50.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Button mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                  <Button fx:id="moins4" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="20.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Button fx:id="addPanier4" mnemonicParsing="false" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets top="80.0" />
                      </GridPane.margin>
                   </Button>
-                  <Label text="450,00€" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Label fx:id="labelPrix4" text="450,00€" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets top="100.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Quantité restante :" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets top="20.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="labelQte4" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets top="40.0" />
                      </GridPane.margin>
                   </Label>
                </children>
@@ -224,39 +264,49 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <ImageView fitHeight="124.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <ImageView fx:id="img5" fitHeight="124.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <image>
                         <Image url="@../../../4300.jpg" />
                      </image>
                   </ImageView>
-                  <Label text="Produit5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Label fx:id="label5" text="Produit5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="LEFT">
+                  <Button fx:id="plus5" mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="LEFT">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </Button>
-                  <TextField maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                  <TextField fx:id="qte5" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="50.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Button mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                  <Button fx:id="moins5" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="20.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Button fx:id="addPanier5" mnemonicParsing="false" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets top="80.0" />
                      </GridPane.margin>
                   </Button>
-                  <Label text="450,00€" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Label fx:id="labelPrix5" text="450,00€" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets top="100.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Quantité restante :" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets top="20.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="labelQte5" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets top="40.0" />
                      </GridPane.margin>
                   </Label>
                </children>
@@ -271,39 +321,49 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <ImageView fitHeight="124.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <ImageView fx:id="img6" fitHeight="124.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <image>
                         <Image url="@../../../4300.jpg" />
                      </image>
                   </ImageView>
-                  <Label text="Produit6" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Label fx:id="label6" text="Produit6" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="LEFT">
+                  <Button fx:id="plus6" mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="LEFT">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </Button>
-                  <TextField maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                  <TextField fx:id="qte6" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="50.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Button mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                  <Button fx:id="moins6" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="20.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Button fx:id="addPanier6" mnemonicParsing="false" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets top="80.0" />
                      </GridPane.margin>
                   </Button>
-                  <Label text="450,00€" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Label fx:id="labelPrix6" text="450,00€" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets top="100.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Quantité restante :" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets top="20.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="labelQte6" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets top="40.0" />
                      </GridPane.margin>
                   </Label>
                </children>
@@ -315,12 +375,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="792.0" layoutY="32.0" mnemonicParsing="false" text="Panier">
+      <Button fx:id="btnPanier" layoutX="792.0" layoutY="33.0" mnemonicParsing="false" text="Panier">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <ComboBox layoutX="51.0" layoutY="35.0" prefWidth="150.0" promptText="Choix du magasin" />
-      <Label layoutX="857.0" layoutY="35.0" prefHeight="25.0" prefWidth="21.0" text="0" />
+      <ComboBox fx:id="magasinChoix" layoutX="51.0" layoutY="35.0" onAction="#Select" prefWidth="150.0" promptText="Choix du magasin" />
+      <Label fx:id="qtePanier" layoutX="857.0" layoutY="35.0" prefHeight="25.0" prefWidth="21.0" text="0" />
    </children>
 </AnchorPane>

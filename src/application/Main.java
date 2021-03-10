@@ -26,13 +26,13 @@ public class Main extends Application {
 		}*/
 		
 		stg = primaryStage;
-		primaryStage.setResizable(false);
+
 		
 		Parent root;
 		try {
 			root = FXMLLoader.load(getClass().getResource("../vues/Connexion.fxml"));
 			primaryStage.setTitle("Connexion");
-			primaryStage.setScene(new Scene(root,600,700));
+			primaryStage.setScene(new Scene(root));
 			primaryStage.show();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

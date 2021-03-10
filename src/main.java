@@ -11,6 +11,9 @@ import serveurs.magasin.interfaces.MagasinInterface;
 public class main {
 
 	public static void main(String[] args) throws SQLException {
+
+		System.out.println(BanqueDAO.getBanque(1)
+		);
 		try{
 			BanqueInterface banqueInterface = (BanqueInterface) Naming.lookup("rmi://localhost:9005/banque");
 			System.out.println(banqueInterface.getBanque(1));

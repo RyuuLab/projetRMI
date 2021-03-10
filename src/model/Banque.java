@@ -24,6 +24,12 @@ public class Banque {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Banque{" +
+				"idBanque=" + idBanque +
+				", nom='" + nom + '\'' +
+				'}';
+	}
 }

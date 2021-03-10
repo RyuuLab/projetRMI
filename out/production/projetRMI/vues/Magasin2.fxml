@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Magasin1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Magasin2">
    <children>
       <GridPane gridLinesVisible="true" layoutX="51.0" layoutY="106.0" prefHeight="500.0" prefWidth="800.0">
         <columnConstraints>
@@ -56,7 +56,7 @@
                         <Insets right="50.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Button fx:id="moins1" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                  <Button fx:id="mois1" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="20.0" />
                      </GridPane.margin>
@@ -375,12 +375,13 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnPanier" layoutX="792.0" layoutY="33.0" mnemonicParsing="false" text="Panier">
+      <Button fx:id="btnPanier" layoutX="792.0" layoutY="32.0" mnemonicParsing="false" text="Panier">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
       <ComboBox fx:id="magasinChoix" layoutX="51.0" layoutY="35.0" onAction="#Select" prefWidth="150.0" promptText="Choix du magasin" />
       <Label fx:id="qtePanier" layoutX="857.0" layoutY="35.0" prefHeight="25.0" prefWidth="21.0" text="0" />
+      <Label layoutX="425.0" layoutY="39.0" text="Magasin2" />
    </children>
 </AnchorPane>

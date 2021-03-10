@@ -61,6 +61,15 @@ public class ClientBanque {
 	public void setMdp(String mdp) {
 		this.mdp = mdp;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "ClientBanque{" +
+				"idBanque=" + idBanque +
+				", idClientBanque=" + idClientBanque +
+				", cb=" + cb +
+				", cvv=" + cvv +
+				", mdp='" + mdp + '\'' +
+				'}';
+	}
 }
