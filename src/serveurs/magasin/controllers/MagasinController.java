@@ -4,14 +4,11 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.SQLException;
 import java.util.List;
-
 import model.ClientMagasin;
 import model.Magasin;
-import model.Panier;
 import model.Produit;
 import serveurs.DAO.ClientMagasinDAO;
 import serveurs.DAO.MagasinDAO;
-import serveurs.DAO.PanierDAO;
 import serveurs.DAO.ProduitDAO;
 import serveurs.magasin.interfaces.MagasinInterface;
 

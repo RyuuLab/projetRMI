@@ -1,6 +1,8 @@
 package model;
 
-public class Produit {
+import java.io.Serializable;
+
+public class Produit implements Serializable {
 	int idProduit;
 	int idMagasin;
 	String imageProduit;

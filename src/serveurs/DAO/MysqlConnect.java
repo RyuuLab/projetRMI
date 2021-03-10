@@ -1,13 +1,11 @@
 package serveurs.DAO;
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
 
+import com.mysql.jdbc.Connection;
 import java.sql.DriverManager;
 
 public final class MysqlConnect {
     public Connection conn;
     public static MysqlConnect db;
-    private static Statement statement;
     
     private MysqlConnect() {
         String url = "jdbc:mysql://devbdd.iutmetz.univ-lorraine.fr:3306/";

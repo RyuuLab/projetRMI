@@ -1,6 +1,8 @@
 package model;
 
-public class ClientMagasin {
+import java.io.Serializable;
+
+public class ClientMagasin implements Serializable {
 	
 	int idClientMagasin;
 	String nom;

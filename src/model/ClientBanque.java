@@ -1,6 +1,8 @@
 package model;
 
-public class ClientBanque {
+import java.io.Serializable;
+
+public class ClientBanque implements Serializable {
 	int idBanque;
 	int idClientBanque;
 	int cb;

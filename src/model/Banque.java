@@ -1,6 +1,8 @@
 package model;
 
-public class Banque {
+import java.io.Serializable;
+
+public class Banque implements Serializable {
 	int idBanque;
 	String nom;
 	

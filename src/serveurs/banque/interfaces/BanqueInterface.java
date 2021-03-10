@@ -2,7 +2,6 @@ package serveurs.banque.interfaces;
 
 import model.Banque;
 import model.ClientBanque;
-
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.sql.SQLException;

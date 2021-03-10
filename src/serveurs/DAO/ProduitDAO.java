@@ -1,9 +1,6 @@
 package serveurs.DAO;
 
-import com.mysql.jdbc.Connection;
-import model.Magasin;
 import model.Produit;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,8 +10,7 @@ import java.util.List;
 
 public class ProduitDAO {
     private static MysqlConnect db = MysqlConnect.getDbCon();
-    private static Statement statement;
-    private static Connection conn;
+
 
     public static List<Produit> getProduits() throws SQLException {
         String sql = "select * from Produit";

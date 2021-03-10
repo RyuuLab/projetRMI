@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Panier {
+public class Panier implements Serializable {
 	int idPanier;
 	int idClient;
 	Produit produit;

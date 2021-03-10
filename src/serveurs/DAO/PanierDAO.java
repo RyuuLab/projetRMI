@@ -1,9 +1,6 @@
 package serveurs.DAO;
 
-import com.mysql.jdbc.Connection;
 import model.Panier;
-import model.Produit;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,8 +10,6 @@ import java.util.List;
 
 public class PanierDAO {
     private static MysqlConnect db = MysqlConnect.getDbCon();
-    private static Statement statement;
-    private static Connection conn;
 
     public static List<Panier> getPanierClient(int idClient) throws SQLException {
         String sql = "select * from Panier where idClient = ?";
