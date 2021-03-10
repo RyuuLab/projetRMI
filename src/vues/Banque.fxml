@@ -7,27 +7,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="cvv" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #7875B0;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="cvv" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #7875B0;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="260.0" layoutY="33.0" text="Banque">
+      <Label layoutX="410.0" layoutY="54.0" text="Banque">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="nCarte" layoutX="226.0" layoutY="120.0" />
-      <PasswordField fx:id="cvv" layoutX="226.0" layoutY="200.0" />
-      <Label layoutX="108.0" layoutY="123.0" text="Numéro de carte">
+      <TextField fx:id="nCarte" layoutX="376.0" layoutY="143.0" />
+      <PasswordField fx:id="cvv" layoutX="376.0" layoutY="211.0" />
+      <Label layoutX="248.0" layoutY="146.0" text="Numéro de carte">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="81.0" layoutY="203.0" text="Cryptogramme visuel">
+      <Label layoutX="227.0" layoutY="214.0" text="Cryptogramme visuel">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="btnValider" layoutX="200.0" layoutY="287.0" mnemonicParsing="false" text="Valider" />
-      <Button fx:id="btnAnnuler" layoutX="349.0" layoutY="287.0" mnemonicParsing="false" text="Annuler" />
+      <Button fx:id="btnValider" layoutX="350.0" layoutY="312.0" mnemonicParsing="false" text="Valider" />
+      <Button fx:id="btnAnnuler" layoutX="490.0" layoutY="312.0" mnemonicParsing="false" text="Annuler" />
    </children>
 </AnchorPane>

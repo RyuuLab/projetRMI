@@ -15,38 +15,31 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		/*try {
-			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root,400,400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}*/
-		
-		stg = primaryStage;
-
-		
-		Parent root;
+		//stg = primaryStage;
+		//Parent root;
 		try {
-			root = FXMLLoader.load(getClass().getResource("../vues/Connexion.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../vues/Connexion.fxml"));
+			Connexion connexion = new Connexion();
+			fxmlLoader.setController(connexion);
+			AnchorPane root = null;
+			try{
+				root = fxmlLoader.load();
+			}
+			catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			Scene scene = new Scene(root);
+			primaryStage.setScene(scene);
 			primaryStage.setTitle("Connexion");
-			primaryStage.setScene(new Scene(root));
 			primaryStage.show();
+			root = FXMLLoader.load(getClass().getResource("../vues/Connexion.fxml"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
-	
-	
-	public void changeScene(String fxml) throws IOException {
-		Parent pane = FXMLLoader.load(getClass().getResource(fxml));
-		stg.getScene().setRoot(pane);
-	}
-	
 	
 	public static void main(String[] args) {
 		launch(args);
