@@ -8,32 +8,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Connexion">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #698FA8;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Connexion">
    <children>
-      <TextField fx:id="identifiant" layoutX="227.0" layoutY="164.0" />
-      <Label layoutX="143.0" layoutY="167.0" text="Identifiant" textFill="WHITE">
+      <TextField fx:id="identifiant" layoutX="376.0" layoutY="165.0" />
+      <Label layoutX="295.0" layoutY="168.0" text="Identifiant" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="132.0" layoutY="227.0" text="Mot de passe" textFill="WHITE">
+      <Label layoutX="274.0" layoutY="228.0" text="Mot de passe" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="245.0" layoutY="34.0" text="Connexion" textFill="WHITE">
+      <Label layoutX="393.0" layoutY="44.0" text="Connexion" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="connexion" layoutX="259.0" layoutY="284.0" mnemonicParsing="false" onAction="#UserConnexion" text="Se connecter" />
-      <ComboBox fx:id="magasinChoix" layoutX="226.0" layoutY="106.0" prefWidth="150.0" promptText="Choix du magasin" />
-      <Label layoutX="148.0" layoutY="109.0" text="Magasin" textFill="WHITE">
+      <Button fx:id="connexion" layoutX="408.0" layoutY="289.0" mnemonicParsing="false" onAction="#UserConnexion" text="Se connecter" />
+      <ComboBox fx:id="magasinChoix" layoutX="375.0" layoutY="117.0" prefWidth="150.0" promptText="Choix du magasin" />
+      <Label layoutX="305.0" layoutY="120.0" text="Magasin" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <PasswordField fx:id="mdp" layoutX="228.0" layoutY="225.0" />
-      <Label fx:id="erreur" alignment="CENTER" layoutX="230.0" layoutY="79.0" prefHeight="17.0" prefWidth="140.0" textAlignment="CENTER" textFill="#fc2121" />
+      <PasswordField fx:id="mdp" layoutX="376.0" layoutY="225.0" />
+      <Label fx:id="erreur" alignment="CENTER" layoutX="339.0" layoutY="85.0" prefHeight="25.0" prefWidth="222.0" textAlignment="CENTER" textFill="#fc2121" />
    </children>
 </AnchorPane>

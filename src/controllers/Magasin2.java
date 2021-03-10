@@ -1,6 +1,7 @@
 package controllers;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import application.Main;
 import javafx.collections.FXCollections;
@@ -11,8 +12,15 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.fxml.FXMLLoader;
+import model.ClientMagasin;
+import model.Produit;
 
 public class Magasin2 {
+    private HashMap<Produit, Integer> panier = new HashMap<Produit, Integer>();
+    private ClientMagasin client;
+    private AnchorPane root2;
 
     @FXML
     private Button btnPanier;
@@ -44,9 +52,20 @@ public class Magasin2 {
 
     @FXML
     void Select() throws IOException {
-        String s = magasinChoix.getSelectionModel().getSelectedItem().toString();
-        Main m = new  Main();
-        m.changeScene("../vues/"+s+".fxml");
+        //String s = magasinChoix.getSelectionModel().getSelectedItem().toString();
+        //Main m = new  Main();
+        //m.changeScene("../vues/"+s+".fxml");
+
+//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Magasin2.fxml"));
+//        Magasin2 controller = new Magasin2(this.panier,this.client);
+//        fxmlLoader.setController(controller);
+//        root2 = fxmlLoader.load();
+//        stage.setScene(new Scene(root2));
+    }
+
+    public Magasin2(HashMap<Produit, Integer> panier, ClientMagasin client){
+        this.panier = panier;
+        this.client = client;
     }
 
     public void initialize(){
