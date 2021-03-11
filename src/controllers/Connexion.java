@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 import application.Main;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -13,6 +14,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.collections.*;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import model.ClientMagasin;
 import model.Produit;
 
@@ -23,7 +26,6 @@ public class Connexion {
 
 	private HashMap<Produit, Integer> panier = new HashMap<Produit, Integer>();
 	private ClientMagasin client;
-
 	@FXML
 	private Label erreur;
 	@FXML
@@ -59,14 +61,14 @@ public class Connexion {
 	private void checkLogin() throws IOException {
 		Main m = new  Main();
 		if(!magasinChoix.getSelectionModel().isEmpty()){
-			String s = magasinChoix.getSelectionModel().getSelectedItem().toString();
+			String page = magasinChoix.getSelectionModel().getSelectedItem().toString();
 			if(identifiant.getText().toString().equals("abc") && mdp.getText().toString().equals("123")) {
 				erreur.setText("Succès");
-				//m.changeScene("../vues/"+s+".fxml");
-				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(s+".fxml"));
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../vues/"+page+".fxml"));
 				Magasin1 magasin1;
 				Magasin2 magasin2;
-				if(s.equals("Magasin1")){
+				AnchorPane root = null;
+				if(page.equals("Magasin1")){
 					magasin1 = new Magasin1(this.panier,this.client);
 					fxmlLoader.setController(magasin1);
 				}
@@ -74,17 +76,18 @@ public class Connexion {
 					magasin2 = new Magasin2(this.panier,this.client);
 					fxmlLoader.setController(magasin2);
 				}
-				try {
+				try{
 					root = fxmlLoader.load();
-				} catch (IOException e) {
-
+				}
+				catch (IOException e) {
+					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-
-				stage.setScene(new Scene(root));
-				stage.setTitle(s);
-
-
+				Scene scene = new Scene(root);
+				Stage appStage = (Stage) connexion.getScene().getWindow();
+				appStage.setScene(scene);
+				appStage.setTitle(page);
+				appStage.show();
 			} else {
 				erreur.setText("Identifiant ou mdp incorrect");
 			}

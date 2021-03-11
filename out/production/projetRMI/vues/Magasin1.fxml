@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Magasin1">
+<AnchorPane fx:id="root1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane gridLinesVisible="true" layoutX="51.0" layoutY="106.0" prefHeight="500.0" prefWidth="800.0">
         <columnConstraints>
@@ -375,7 +375,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnPanier" layoutX="792.0" layoutY="33.0" mnemonicParsing="false" text="Panier">
+      <Button fx:id="btnPanier" layoutX="792.0" layoutY="33.0" mnemonicParsing="false" text="Panier" onAction="#toPanier">
          <font>
             <Font size="14.0" />
          </font>

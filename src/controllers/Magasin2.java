@@ -7,6 +7,7 @@ import application.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -14,12 +15,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
 import model.ClientMagasin;
 import model.Produit;
 
 public class Magasin2 {
     private HashMap<Produit, Integer> panier = new HashMap<Produit, Integer>();
     private ClientMagasin client;
+    @FXML
     private AnchorPane root2;
 
     @FXML
@@ -52,15 +55,26 @@ public class Magasin2 {
 
     @FXML
     void Select() throws IOException {
-        //String s = magasinChoix.getSelectionModel().getSelectedItem().toString();
-        //Main m = new  Main();
-        //m.changeScene("../vues/"+s+".fxml");
-
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Magasin2.fxml"));
-//        Magasin2 controller = new Magasin2(this.panier,this.client);
-//        fxmlLoader.setController(controller);
-//        root2 = fxmlLoader.load();
-//        stage.setScene(new Scene(root2));
+        String page = magasinChoix.getSelectionModel().getSelectedItem().toString();
+        if (page.equals("Magasin1")) {
+            System.out.println(page);
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../vues/" + page + ".fxml"));
+            Magasin1 magasin1;
+            AnchorPane root = null;
+            magasin1 = new Magasin1(this.panier, this.client);
+            fxmlLoader.setController(magasin1);
+            try {
+                root = fxmlLoader.load();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            Scene scene = new Scene(root);
+            Stage appStage = (Stage) btnPanier.getScene().getWindow();
+            appStage.setScene(scene);
+            appStage.setTitle(page);
+            appStage.show();
+        }
     }
 
     public Magasin2(HashMap<Produit, Integer> panier, ClientMagasin client){
@@ -71,6 +85,8 @@ public class Magasin2 {
     public void initialize(){
         ObservableList<String> list = FXCollections.observableArrayList("Magasin1", "Magasin2");
         magasinChoix.setItems(list);
+        magasinChoix.setValue("Magasin2");
+
     }
 
     private void ajouterUn() throws IOException {

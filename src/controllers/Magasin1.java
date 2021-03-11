@@ -15,12 +15,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
 import model.ClientMagasin;
 import model.Produit;
 
 public class Magasin1 {
     private HashMap<Produit, Integer> panier = new HashMap<Produit, Integer>();
     private ClientMagasin client;
+    @FXML
     private AnchorPane root1;
 
     @FXML
@@ -53,15 +55,25 @@ public class Magasin1 {
 
     @FXML
     void Select() throws IOException {
-        //String s = magasinChoix.getSelectionModel().getSelectedItem().toString();
-        //Main m = new  Main();
-        //m.changeScene("../vues/"+s+".fxml");
-
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Magasin1.fxml"));
-//        Magasin1 controller = new Magasin1(this.panier, this.client);
-//        fxmlLoader.setController(controller);
-//        root1 = fxmlLoader.load();
-//        stage.setScene(new Scene(root1));
+        String page = magasinChoix.getSelectionModel().getSelectedItem().toString();
+        if (page.equals("Magasin2")) {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../vues/" + page + ".fxml"));
+            Magasin2 magasin2;
+            AnchorPane root = null;
+            magasin2 = new Magasin2(this.panier, this.client);
+            fxmlLoader.setController(magasin2);
+            try {
+                root = fxmlLoader.load();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            Scene scene = new Scene(root);
+            Stage appStage = (Stage) btnPanier.getScene().getWindow();
+            appStage.setScene(scene);
+            appStage.setTitle(page);
+            appStage.show();
+        }
     }
 
 
@@ -74,6 +86,7 @@ public class Magasin1 {
     public void initialize(){
         ObservableList<String> list = FXCollections.observableArrayList("Magasin1", "Magasin2");
         magasinChoix.setItems(list);
+        magasinChoix.setValue("Magasin1");
     }
 
     private void ajouterUn() throws IOException {
@@ -81,5 +94,24 @@ public class Magasin1 {
         //String num2 = Integer.toString(num1);
         String num2 ="Success";
         qte1.setText(num2);
+    }
+
+    @FXML
+    void toPanier() throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../vues/Panier.fxml"));
+        Panier panier = new Panier(this.panier, this.client);
+        AnchorPane root = null;
+        fxmlLoader.setController(panier);
+        try {
+            root = fxmlLoader.load();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        Stage appStage = (Stage) btnPanier.getScene().getWindow();
+        appStage.setScene(scene);
+        appStage.setTitle("Panier");
+        appStage.show();
     }
 }

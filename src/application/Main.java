@@ -2,7 +2,9 @@ package application;
 	
 import java.io.IOException;
 
+import controllers.Connexion;
 import javafx.application.Application;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -33,8 +35,7 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Connexion");
 			primaryStage.show();
-			root = FXMLLoader.load(getClass().getResource("../vues/Connexion.fxml"));
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
