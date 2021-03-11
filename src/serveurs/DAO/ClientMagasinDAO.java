@@ -10,10 +10,10 @@ public class ClientMagasinDAO {
     private static MysqlConnect db = MysqlConnect.getDbCon();
 
     public static ClientMagasin toConnectMagasin(String email, String mdp) throws SQLException {
-        String sql = "select * from ClientMagasin where email = ? and mdp = ?";
+        String sql = "select * from ClientMagasin where LOWER(email) = ? and mdp = ?";
         ClientMagasin clientMagasin = null;
         PreparedStatement ps = db.conn.prepareStatement(sql);
-        ps.setString(1, email);
+        ps.setString(1, email.toLowerCase());
         ps.setString(2, mdp);
         try (ResultSet res = ps.executeQuery();){
             while(res.next()) {

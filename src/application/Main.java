@@ -2,11 +2,10 @@ package application;
 	
 import java.io.IOException;
 
-import controllers.Connexion;
+import controllers.ConnexionController;
 import javafx.application.Application;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 
@@ -17,11 +16,9 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		//stg = primaryStage;
-		//Parent root;
 		try {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../vues/Connexion.fxml"));
-			Connexion connexion = new Connexion();
+			ConnexionController connexion = new ConnexionController();
 			fxmlLoader.setController(connexion);
 			AnchorPane root = null;
 			try{
@@ -39,7 +36,6 @@ public class Main extends Application {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 	
 	public static void main(String[] args) {
