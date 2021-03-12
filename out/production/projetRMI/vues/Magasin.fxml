@@ -46,9 +46,9 @@
                                 <Font size="14.0" />
                             </font>
                         </Label>
-                        <Button fx:id="plus1" mnemonicParsing="false" onAction="#PlusUn" text="+" GridPane.columnIndex="2" GridPane.halignment="LEFT">
+                        <Button fx:id="plus1" mnemonicParsing="false" onAction="#PlusUn" text="+" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
                             <GridPane.margin>
-                                <Insets left="20.0" />
+                                <Insets right="20.0" />
                             </GridPane.margin>
                         </Button>
                         <TextField fx:id="qte1" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
@@ -56,9 +56,9 @@
                                 <Insets right="50.0" />
                             </GridPane.margin>
                         </TextField>
-                        <Button fx:id="moins1" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                        <Button fx:id="moins1" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
                             <GridPane.margin>
-                                <Insets right="20.0" />
+                                <Insets left="25.0" />
                             </GridPane.margin>
                         </Button>
                         <Button fx:id="addPanier1" mnemonicParsing="false" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
@@ -103,9 +103,9 @@
                                 <Font size="14.0" />
                             </font>
                         </Label>
-                        <Button fx:id="plus2" mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="LEFT">
+                        <Button fx:id="plus2" mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
                             <GridPane.margin>
-                                <Insets left="20.0" />
+                                <Insets right="20.0" />
                             </GridPane.margin>
                         </Button>
                         <TextField fx:id="qte2" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
@@ -113,9 +113,9 @@
                                 <Insets right="50.0" />
                             </GridPane.margin>
                         </TextField>
-                        <Button fx:id="moins2" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                        <Button fx:id="moins2" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
                             <GridPane.margin>
-                                <Insets right="20.0" />
+                                <Insets left="25.0" />
                             </GridPane.margin>
                         </Button>
                         <Button fx:id="addPanier2" mnemonicParsing="false" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
@@ -160,9 +160,9 @@
                                 <Font size="14.0" />
                             </font>
                         </Label>
-                        <Button fx:id="plus3" mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="LEFT">
+                        <Button fx:id="plus3" mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
                             <GridPane.margin>
-                                <Insets left="20.0" />
+                                <Insets right="20.0" />
                             </GridPane.margin>
                         </Button>
                         <TextField fx:id="qte3" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
@@ -170,9 +170,9 @@
                                 <Insets right="50.0" />
                             </GridPane.margin>
                         </TextField>
-                        <Button fx:id="moins3" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                        <Button fx:id="moins3" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
                             <GridPane.margin>
-                                <Insets right="20.0" />
+                                <Insets left="25.0" />
                             </GridPane.margin>
                         </Button>
                         <Button fx:id="addPanier3" mnemonicParsing="false" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
@@ -217,9 +217,9 @@
                                 <Font size="14.0" />
                             </font>
                         </Label>
-                        <Button fx:id="plus4" mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="LEFT">
+                        <Button fx:id="plus4" mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
                             <GridPane.margin>
-                                <Insets left="20.0" />
+                                <Insets right="20.0" />
                             </GridPane.margin>
                         </Button>
                         <TextField fx:id="qte4" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
@@ -227,9 +227,9 @@
                                 <Insets right="50.0" />
                             </GridPane.margin>
                         </TextField>
-                        <Button fx:id="moins4" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                        <Button fx:id="moins4" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
                             <GridPane.margin>
-                                <Insets right="20.0" />
+                                <Insets left="25.0" />
                             </GridPane.margin>
                         </Button>
                         <Button fx:id="addPanier4" mnemonicParsing="false" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
@@ -274,9 +274,9 @@
                                 <Font size="14.0" />
                             </font>
                         </Label>
-                        <Button fx:id="plus5" mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="LEFT">
+                        <Button fx:id="plus5" mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
                             <GridPane.margin>
-                                <Insets left="20.0" />
+                                <Insets right="20.0" />
                             </GridPane.margin>
                         </Button>
                         <TextField fx:id="qte5" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
@@ -284,9 +284,9 @@
                                 <Insets right="50.0" />
                             </GridPane.margin>
                         </TextField>
-                        <Button fx:id="moins5" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                        <Button fx:id="moins5" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
                             <GridPane.margin>
-                                <Insets right="20.0" />
+                                <Insets left="25.0" />
                             </GridPane.margin>
                         </Button>
                         <Button fx:id="addPanier5" mnemonicParsing="false" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
@@ -331,9 +331,9 @@
                                 <Font size="14.0" />
                             </font>
                         </Label>
-                        <Button fx:id="plus6" mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="LEFT">
+                        <Button fx:id="plus6" mnemonicParsing="false" text="+" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
                             <GridPane.margin>
-                                <Insets left="20.0" />
+                                <Insets right="20.0" />
                             </GridPane.margin>
                         </Button>
                         <TextField fx:id="qte6" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
@@ -341,9 +341,9 @@
                                 <Insets right="50.0" />
                             </GridPane.margin>
                         </TextField>
-                        <Button fx:id="moins6" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                        <Button fx:id="moins6" mnemonicParsing="false" text="-" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
                             <GridPane.margin>
-                                <Insets right="20.0" />
+                                <Insets left="25.0" />
                             </GridPane.margin>
                         </Button>
                         <Button fx:id="addPanier6" mnemonicParsing="false" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
@@ -375,7 +375,7 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button fx:id="btnPanier" layoutX="792.0" layoutY="33.0" mnemonicParsing="false" text="Panier" onAction="#toPanier">
+        <Button fx:id="btnPanier" layoutX="792.0" layoutY="33.0" mnemonicParsing="false" onAction="#toPanier" text="Panier">
             <font>
                 <Font size="14.0" />
             </font>
