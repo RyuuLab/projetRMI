@@ -18,7 +18,6 @@ public class Tools {
         AtomicInteger index = new AtomicInteger(1);
         List<Produit> produits =  serveurMagasin.getProduitsByMagasin(id);
         produits.forEach((produit) -> {
-            System.out.println(produit.getIdProduit());
             Image image = new Image("images/"+produit.getIdProduit()+".jpg");
             ImageView img = (ImageView) scene.lookup("#img"+index);
             Label label = (Label) scene.lookup("#label"+index);

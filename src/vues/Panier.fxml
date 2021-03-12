@@ -16,9 +16,10 @@
         </Label>
         <TableView fx:id="tableViewPanier" layoutX="25.0" layoutY="102.0" prefHeight="530.0" prefWidth="839.0">
             <columns>
-                <TableColumn prefWidth="565.0" text="Nom" />
-                <TableColumn prefWidth="83.0" text="Qte" />
-                <TableColumn minWidth="0.0" prefWidth="190.0" text="Prix" />
+                <TableColumn fx:id="nom" prefWidth="408.0" text="Nom" />
+                <TableColumn fx:id="qte" prefWidth="91.0" text="Qte" />
+                <TableColumn fx:id="prix" minWidth="0.0" prefWidth="150.0" text="Prix" />
+            <TableColumn fx:id="edit" minWidth="0.0" prefWidth="189.0" text="edit" />
             </columns>
         </TableView>
         <Button fx:id="ValiderAchat" layoutX="279.0" layoutY="656.0" mnemonicParsing="false" text="Valider achat">
