@@ -16,4 +16,7 @@ public interface MagasinInterface extends Remote {
     public boolean removeQuantityProduit(int idProduit, int quantite) throws RemoteException, SQLException;
     public boolean setQuantityProduit(int idProduit, int quantite) throws RemoteException, SQLException;
     public double calculPanier(ArrayList<Produit> produits) throws RemoteException;
+    public ClientBanque sendCoordBanque(long numCarte, int numCvv) throws RemoteException, SQLException;
+    public boolean achatTermine(boolean b) throws RemoteException;
+    public boolean getAchatTermine() throws RemoteException;
 }

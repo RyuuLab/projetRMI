@@ -5,16 +5,15 @@ import java.rmi.server.UnicastRemoteObject;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import model.ClientMagasin;
-import model.Magasin;
-import model.Panier;
-import model.Produit;
+
+import model.*;
 import serveurs.DAO.ClientMagasinDAO;
 import serveurs.DAO.MagasinDAO;
 import serveurs.DAO.ProduitDAO;
 import serveurs.magasin.interfaces.MagasinInterface;
 
 public class MagasinController extends UnicastRemoteObject implements MagasinInterface {
+	private boolean achatTermine = false;
 
 	public MagasinController() throws RemoteException {
 		super();
@@ -60,4 +59,20 @@ public class MagasinController extends UnicastRemoteObject implements MagasinInt
 	public double calculPanier(ArrayList<Produit> produits) throws RemoteException {
 		return produits.stream().mapToDouble(panier -> panier.getPrix()*panier.getQuantite()).sum();
 	}
+
+	@Override
+	public ClientBanque sendCoordBanque(long numCarte, int numCvv) throws RemoteException, SQLException {
+		return ConnectToBanque.banque().toConnectBanque(numCarte, numCvv);
+	}
+
+	@Override
+	public boolean achatTermine(boolean b) throws RemoteException {
+		return achatTermine = b;
+	}
+
+	@Override
+	public boolean getAchatTermine() throws RemoteException {
+		return achatTermine;
+	}
+
 }

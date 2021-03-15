@@ -72,6 +72,24 @@ public class FactureController {
         appStage.show();
     }
 
+    @FXML
+    void toBanque() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../vues/Banque.fxml"));
+        BanqueController banque = new BanqueController(this.client, this.panierClient, this.lastMagasin);
+        AnchorPane root = null;
+        fxmlLoader.setController(banque);
+        try {
+            root = fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        Stage appStage = (Stage) btnValider.getScene().getWindow();
+        appStage.setScene(scene);
+        appStage.setTitle("Banque");
+        appStage.show();
+    }
+
     private void produitClient() {
         this.panierClient.forEach(panier -> {
             this.produits.add(new Produit(

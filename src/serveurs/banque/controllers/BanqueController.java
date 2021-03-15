@@ -22,12 +22,22 @@ public class BanqueController extends UnicastRemoteObject implements BanqueInter
 	}
 
 	@Override
-	public ClientBanque toConnectBanque(int cb, int cvv) throws RemoteException, SQLException {
+	public ClientBanque toConnectBanque(long cb, int cvv) throws RemoteException, SQLException {
 		return ClientBanqueDAO.toConnectBanque(cb, cvv);
 	}
 
 	@Override
-	public Boolean toVerifBanque(int cb, int cvv, String mdp) throws RemoteException, SQLException {
+	public Boolean toVerifBanque(long cb, int cvv, String mdp) throws RemoteException, SQLException {
 		return ClientBanqueDAO.toVerifBanque(cb, cvv, mdp);
+	}
+
+	@Override
+	public Boolean toVerifSolde(int idClient, double solde) throws RemoteException, SQLException {
+		return ClientBanqueDAO.toVerifSolde(idClient, solde);
+	}
+
+	@Override
+	public Boolean updateSolde(int idClient, double solde) throws RemoteException, SQLException {
+		return ClientBanqueDAO.updateSolde(idClient, solde);
 	}
 }

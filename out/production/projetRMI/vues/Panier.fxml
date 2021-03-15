@@ -22,12 +22,12 @@
             <TableColumn fx:id="edit" minWidth="0.0" prefWidth="189.0" text="edit" />
             </columns>
         </TableView>
-        <Button fx:id="validerAchat" layoutX="279.0" layoutY="656.0" mnemonicParsing="false" onAction="#toFacture" text="Valider panier">
+        <Button fx:id="validerAchat" layoutX="589.0" layoutY="656.0" mnemonicParsing="false" onAction="#toFacture" text="Valider panier">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button fx:id="backToMagasin" layoutX="507.0" layoutY="656.0" mnemonicParsing="false" onAction="#toMagasin" text="Continuer mes achats">
+        <Button fx:id="backToMagasin" layoutX="185.0" layoutY="656.0" mnemonicParsing="false" onAction="#toMagasin" text="Continuer mes achats">
             <font>
                 <Font size="14.0" />
             </font>

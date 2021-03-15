@@ -7,26 +7,30 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #7875B0;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="nomBanque" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #DAC3FF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Label layoutX="410.0" layoutY="54.0" text="Banque">
+        <Label layoutX="368.0" layoutY="108.0" text="Banque">
             <font>
-                <Font size="24.0" />
+                <Font size="50.0" />
             </font>
         </Label>
-        <TextField fx:id="nCarte" layoutX="376.0" layoutY="143.0" />
-        <PasswordField fx:id="cvv" layoutX="376.0" layoutY="211.0" />
-        <Label layoutX="248.0" layoutY="146.0" text="Numéro de carte">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Label>
-        <Label layoutX="227.0" layoutY="214.0" text="Cryptogramme visuel">
+        <TextField fx:id="nCarte" layoutX="440.0" layoutY="220.0" />
+        <PasswordField fx:id="cvv" layoutX="450.0" layoutY="286.0" />
+        <Label layoutX="312.0" layoutY="223.0" text="Numéro de carte">
             <font>
                 <Font size="14.0" />
             </font>
         </Label>
-        <Button fx:id="btnValider" layoutX="350.0" layoutY="312.0" mnemonicParsing="false" text="Valider" />
-        <Button fx:id="btnAnnuler" layoutX="490.0" layoutY="312.0" mnemonicParsing="false" text="Annuler" />
+        <Label layoutX="301.0" layoutY="289.0" text="Cryptogramme visuel">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnValider" layoutX="515.0" layoutY="391.0" mnemonicParsing="false" onAction="#sendBanque" prefHeight="36.0" prefWidth="113.0" text="Valider" />
+        <Button fx:id="btnAnnuler" layoutX="301.0" layoutY="391.0" mnemonicParsing="false" onAction="#returnFacture" prefHeight="36.0" prefWidth="113.0" text="Annuler" />
+      <Label fx:id="error" alignment="CENTER" contentDisplay="CENTER" layoutX="258.0" layoutY="93.0" prefHeight="17.0" prefWidth="387.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
     </children>
 </AnchorPane>

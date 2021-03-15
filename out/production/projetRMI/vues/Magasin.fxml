@@ -375,7 +375,7 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button fx:id="btnPanier" layoutX="792.0" layoutY="33.0" mnemonicParsing="false" onAction="#toPanier" text="Panier : 0">
+        <Button fx:id="btnPanier" layoutX="792.0" layoutY="33.0" mnemonicParsing="false" onAction="#toPanier" style="-fx-background-color: #0D80DA;" text="Panier : 0" textFill="WHITE">
             <font>
                 <Font size="14.0" />
             </font>

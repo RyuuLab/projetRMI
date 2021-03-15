@@ -7,42 +7,47 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #698FA8;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Label layoutX="411.0" layoutY="55.0" text="Facture" textFill="WHITE">
+        <Label layoutX="370.0" layoutY="93.0" text="Facture" textFill="WHITE">
             <font>
-                <Font size="24.0" />
+                <Font size="49.0" />
             </font>
         </Label>
-        <Button fx:id="btnValider" layoutX="349.0" layoutY="378.0" mnemonicParsing="false" text="Valider" />
-        <Button fx:id="btnAnnuler" layoutX="477.0" layoutY="378.0" mnemonicParsing="false" onAction="#returnPanier" text="Annuler" />
-        <Label layoutX="365.0" layoutY="261.0" text="Montant de la commande : " textFill="WHITE">
+        <Button fx:id="btnValider" layoutX="480.0" layoutY="447.0" mnemonicParsing="false" onAction="#toBanque" prefHeight="36.0" prefWidth="104.0" text="Valider" />
+        <Button fx:id="btnAnnuler" layoutX="305.0" layoutY="447.0" mnemonicParsing="false" onAction="#returnPanier" prefHeight="36.0" prefWidth="104.0" text="Annuler" />
+        <Label layoutX="226.0" layoutY="332.0" text="Montant de la commande : " textFill="WHITE">
             <font>
-                <Font size="14.0" />
+                <Font size="25.0" />
             </font>
         </Label>
-        <Label fx:id="mtCommande" layoutX="430.0" layoutY="297.0" text="Label" textFill="WHITE">
+        <Label fx:id="mtCommande" layoutX="541.0" layoutY="335.0" text="Label" textFill="WHITE">
             <font>
-                <Font size="14.0" />
+                <Font size="21.0" />
             </font>
         </Label>
-        <Label layoutX="375.0" layoutY="139.0" text="Nom :" textFill="WHITE">
+        <Label layoutX="317.0" layoutY="207.0" text="Nom :" textFill="WHITE">
             <font>
-                <Font size="14.0" />
+                <Font size="22.0" />
             </font>
         </Label>
-        <Label layoutX="375.0" layoutY="181.0" text="Prénom :" textFill="WHITE">
+        <Label layoutX="317.0" layoutY="250.0" text="Prénom :" textFill="WHITE">
             <font>
-                <Font size="14.0" />
+                <Font size="22.0" />
             </font>
         </Label>
-        <Label fx:id="nom" layoutX="489.0" layoutY="139.0" text="Label" textFill="WHITE">
+        <Label fx:id="nom" layoutX="389.0" layoutY="207.0" prefHeight="32.0" prefWidth="196.0" text="Label" textFill="WHITE">
             <font>
-                <Font size="14.0" />
+                <Font size="22.0" />
             </font>
         </Label>
-        <Label fx:id="prenom" layoutX="489.0" layoutY="181.0" text="Label" textFill="WHITE">
+        <Label fx:id="prenom" layoutX="417.0" layoutY="250.0" prefHeight="32.0" prefWidth="221.0" text="Label" textFill="WHITE">
             <font>
-                <Font size="14.0" />
+                <Font size="22.0" />
             </font>
         </Label>
+      <Label layoutX="704.0" layoutY="334.0" text="€" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

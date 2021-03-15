@@ -5,11 +5,11 @@ import java.io.Serializable;
 public class ClientBanque implements Serializable {
 	int idBanque;
 	int idClientBanque;
-	int cb;
+	long cb;
 	int cvv;
 	String mdp;
 	
-	public ClientBanque(int idBanque, int idClientBanque, int cb, int cvv, String mdp) {
+	public ClientBanque(int idBanque, int idClientBanque, long cb, int cvv, String mdp) {
 		this.idBanque = idBanque;
 		this.idClientBanque = idClientBanque;
 		this.cb = cb;
@@ -17,7 +17,7 @@ public class ClientBanque implements Serializable {
 		this.mdp = mdp;
 	}
 
-	public ClientBanque(int idBanque, int idClientBanque, int cb, int cvv) {
+	public ClientBanque(int idBanque, int idClientBanque, long cb, int cvv) {
 		this.idBanque = idBanque;
 		this.idClientBanque = idClientBanque;
 		this.cb = cb;
@@ -40,7 +40,7 @@ public class ClientBanque implements Serializable {
 		this.idClientBanque = idClientBanque;
 	}
 
-	public int getCb() {
+	public long getCb() {
 		return cb;
 	}
 

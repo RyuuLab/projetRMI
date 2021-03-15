@@ -255,15 +255,10 @@ public class MagasinController {
                         .filter(panier -> id == panier.getIdProduit())
                         .findAny()
                         .orElse(null);
-                System.out.println(p);
                 if(p == null) {
-                    System.out.println("je suis null");
                     qte.set(produit.getQuantite());
-                    System.out.println(qte.get());
                 } else {
-                    System.out.println("je suis pas null");
                     qte.set(p.getQuantite());
-                    System.out.println(qte.get());
                 }
             }
         });
