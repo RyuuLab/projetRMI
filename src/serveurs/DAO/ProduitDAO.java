@@ -108,4 +108,20 @@ public class ProduitDAO {
         }
         return false;
     }
+
+
+    public static boolean setQuantityProduit(int idProduit, int quantite) throws SQLException {
+        String sql = "UPDATE Produit SET quantite = ? where idProduit = ?;";
+        PreparedStatement ps = db.conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+        ps.setInt(1, quantite);
+        ps.setInt(2, idProduit);
+        try {
+            ps.executeUpdate();
+            return true;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

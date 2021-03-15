@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #698FA8;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="total" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #698FA8;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Label layoutX="417.0" layoutY="36.0" text="Panier" textFill="WHITE">
             <font>
                 <Font size="24.0" />
             </font>
         </Label>
-        <TableView fx:id="tableViewPanier" layoutX="25.0" layoutY="102.0" prefHeight="530.0" prefWidth="839.0">
+        <TableView fx:id="tableViewPanier" layoutX="31.0" layoutY="71.0" prefHeight="530.0" prefWidth="839.0">
             <columns>
                 <TableColumn fx:id="nom" prefWidth="408.0" text="Nom" />
                 <TableColumn fx:id="qte" prefWidth="91.0" text="Qte" />
@@ -22,15 +22,20 @@
             <TableColumn fx:id="edit" minWidth="0.0" prefWidth="189.0" text="edit" />
             </columns>
         </TableView>
-        <Button fx:id="ValiderAchat" layoutX="279.0" layoutY="656.0" mnemonicParsing="false" text="Valider achat">
+        <Button fx:id="validerAchat" layoutX="279.0" layoutY="656.0" mnemonicParsing="false" onAction="#toFacture" text="Valider panier">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button fx:id="BackToMagasin" layoutX="507.0" layoutY="656.0" mnemonicParsing="false" text="Continuer mes achats">
+        <Button fx:id="backToMagasin" layoutX="507.0" layoutY="656.0" mnemonicParsing="false" onAction="#toMagasin" text="Continuer mes achats">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
+      <Label fx:id="sousTotal" layoutX="543.0" layoutY="609.0" text="Sous-total (2 articles): 599,98 €" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

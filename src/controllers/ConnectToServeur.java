@@ -9,7 +9,7 @@ public class ConnectToServeur {
     public static MagasinInterface magasinInterface;
     public static BanqueInterface banqueInterface;
 
-    static MagasinInterface magasin() {
+    public static MagasinInterface magasin() {
         try{
             magasinInterface = (MagasinInterface) Naming.lookup("rmi://localhost:9008/magasin");
         }
@@ -20,7 +20,7 @@ public class ConnectToServeur {
         return magasinInterface;
     }
 
-    static BanqueInterface banque() {
+    public static BanqueInterface banque() {
         try{
             banqueInterface = (BanqueInterface) Naming.lookup("rmi://localhost:9005/banque");
         }

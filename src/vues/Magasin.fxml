@@ -51,17 +51,17 @@
                                 <Insets right="20.0" />
                             </GridPane.margin>
                         </Button>
-                        <TextField fx:id="qte1" alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" text="0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                        <TextField fx:id="qte1" alignment="CENTER" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" text="0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets right="50.0" />
                             </GridPane.margin>
                         </TextField>
-                        <Button fx:id="moins1" mnemonicParsing="false" onAction="#DecrementButtonPressed" text="-" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                        <Button fx:id="moins1" disable="true" mnemonicParsing="false" onAction="#DecrementButtonPressed" text="-" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets left="25.0" />
                             </GridPane.margin>
                         </Button>
-                        <Button fx:id="addPanier1" mnemonicParsing="false" onAction="#addPanier" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <Button fx:id="addPanier1" disable="true" mnemonicParsing="false" onAction="#addPanier" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets top="80.0" />
                             </GridPane.margin>
@@ -108,17 +108,17 @@
                                 <Insets right="20.0" />
                             </GridPane.margin>
                         </Button>
-                        <TextField fx:id="qte2" alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" text="0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                        <TextField fx:id="qte2" alignment="CENTER" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" text="0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets right="50.0" />
                             </GridPane.margin>
                         </TextField>
-                        <Button fx:id="moins2" mnemonicParsing="false" onAction="#DecrementButtonPressed" text="-" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                        <Button fx:id="moins2" disable="true" mnemonicParsing="false" onAction="#DecrementButtonPressed" text="-" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets left="25.0" />
                             </GridPane.margin>
                         </Button>
-                        <Button fx:id="addPanier2" mnemonicParsing="false" onAction="#addPanier" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <Button fx:id="addPanier2" disable="true" mnemonicParsing="false" onAction="#addPanier" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets top="80.0" />
                             </GridPane.margin>
@@ -165,17 +165,17 @@
                                 <Insets right="20.0" />
                             </GridPane.margin>
                         </Button>
-                        <TextField fx:id="qte3" alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" text="0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                        <TextField fx:id="qte3" alignment="CENTER" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" text="0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets right="50.0" />
                             </GridPane.margin>
                         </TextField>
-                        <Button fx:id="moins3" mnemonicParsing="false" onAction="#DecrementButtonPressed" text="-" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                        <Button fx:id="moins3" disable="true" mnemonicParsing="false" onAction="#DecrementButtonPressed" text="-" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets left="25.0" />
                             </GridPane.margin>
                         </Button>
-                        <Button fx:id="addPanier3" mnemonicParsing="false" onAction="#addPanier" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <Button fx:id="addPanier3" disable="true" mnemonicParsing="false" onAction="#addPanier" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets top="80.0" />
                             </GridPane.margin>
@@ -222,17 +222,17 @@
                                 <Insets right="20.0" />
                             </GridPane.margin>
                         </Button>
-                        <TextField fx:id="qte4" alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" text="0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                        <TextField fx:id="qte4" alignment="CENTER" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" text="0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets right="50.0" />
                             </GridPane.margin>
                         </TextField>
-                        <Button fx:id="moins4" mnemonicParsing="false" onAction="#DecrementButtonPressed" text="-" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                        <Button fx:id="moins4" disable="true" mnemonicParsing="false" onAction="#DecrementButtonPressed" text="-" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets left="25.0" />
                             </GridPane.margin>
                         </Button>
-                        <Button fx:id="addPanier4" mnemonicParsing="false" onAction="#addPanier" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <Button fx:id="addPanier4" disable="true" mnemonicParsing="false" onAction="#addPanier" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets top="80.0" />
                             </GridPane.margin>
@@ -279,17 +279,17 @@
                                 <Insets right="20.0" />
                             </GridPane.margin>
                         </Button>
-                        <TextField fx:id="qte5" alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" text="0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                        <TextField fx:id="qte5" alignment="CENTER" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" text="0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets right="50.0" />
                             </GridPane.margin>
                         </TextField>
-                        <Button fx:id="moins5" mnemonicParsing="false" onAction="#DecrementButtonPressed" text="-" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                        <Button fx:id="moins5" disable="true" mnemonicParsing="false" onAction="#DecrementButtonPressed" text="-" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets left="25.0" />
                             </GridPane.margin>
                         </Button>
-                        <Button fx:id="addPanier5" mnemonicParsing="false" onAction="#addPanier" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <Button fx:id="addPanier5" disable="true" mnemonicParsing="false" onAction="#addPanier" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets top="80.0" />
                             </GridPane.margin>
@@ -336,17 +336,17 @@
                                 <Insets right="20.0" />
                             </GridPane.margin>
                         </Button>
-                        <TextField fx:id="qte6" alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" text="0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                        <TextField fx:id="qte6" alignment="CENTER" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" text="0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets right="50.0" />
                             </GridPane.margin>
                         </TextField>
-                        <Button fx:id="moins6" mnemonicParsing="false" onAction="#DecrementButtonPressed" text="-" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                        <Button fx:id="moins6" disable="true" mnemonicParsing="false" onAction="#DecrementButtonPressed" text="-" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets left="25.0" />
                             </GridPane.margin>
                         </Button>
-                        <Button fx:id="addPanier6" mnemonicParsing="false" onAction="#addPanier" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <Button fx:id="addPanier6" disable="true" mnemonicParsing="false" onAction="#addPanier" text="Ajouter au panier" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <GridPane.margin>
                                 <Insets top="80.0" />
                             </GridPane.margin>

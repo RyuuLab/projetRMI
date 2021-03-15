@@ -1,100 +1,144 @@
 package controllers;
 
+import javafx.collections.ListChangeListener;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.Button;
-import javafx.util.StringConverter;
-import javafx.util.converter.DoubleStringConverter;
-import javafx.util.converter.IntegerStringConverter;
-import model.ClientMagasin;
-import model.Magasin;
-import model.Produit;
-import model.Panier;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.control.cell.TreeItemPropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.util.Callback;
+import model.*;
 import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
+import serveurs.magasin.interfaces.MagasinInterface;
 //
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.event.ActionEvent;
-import javafx.scene.Group;
-import javafx.scene.control.TableCell;
-import javafx.util.Callback;
 
-import javax.xml.crypto.Data;
+import java.io.IOException;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
 public class PanierController {
-    private HashMap<Produit, Integer> panier = new HashMap<Produit, Integer>();
+    private MagasinInterface serveurMagasin = ConnectToServeur.magasin();
+    public static ArrayList<Panier> panierClient = new ArrayList<Panier>();
+    public static ObservableList<Panier> observableList = FXCollections.observableArrayList();
     private ClientMagasin client;
+    private Magasin lastMagasin;
 
     @FXML
-    private TableView<HashMap<Produit, Integer>> tableViewPanier;
+    private TableView<Panier> tableViewPanier;
+    @FXML
+    private TableColumn<Panier, String> nom;
+    @FXML
+    private TableColumn<Panier, Integer> qte;
+    @FXML
+    private TableColumn<Panier, Double> prix;
+    @FXML
+    private TableColumn<Panier, Void> edit;
+    @FXML
+    private Label sousTotal;
 
-    private final ObservableList<HashMap<Produit, Integer>> tvObservableList = FXCollections.observableArrayList();
 
-//    @FXML
-//    private TableColumn<Produit, String> nom;
-//    @FXML
-//    private TableColumn<Produit, Integer> qte;
-//    @FXML
-//    private TableColumn<Produit, Double> prix;
-//    @FXML
-//    private TableColumn<Produit, Button> edit;
-
-
-    PanierController(ClientMagasin client, HashMap<Produit, Integer> panier) {
-        this.panier = panier;
+    PanierController(ClientMagasin client, ArrayList<Panier> panierClient, Magasin lastMagasin) {
+        this.panierClient = panierClient;
         this.client = client;
+        this.lastMagasin = lastMagasin;
+        observableList.addListener((ListChangeListener<Panier>) change -> {
+            while (change.next()) {
+                updatePanier();
+            }
+        });
+    }
+
+    public static void updateObservableList() {
+        observableList.clear();
+        observableList.addAll(panierClient);
     }
 
     public void initialize() throws RemoteException, SQLException {
-        //createPanier();
-        //loadData();
-        start();
-    }
-
-    public void start() {
-        createPanier();
-        tableViewPanier.setItems(tvObservableList);
-
-        TableColumn<Produit, String> nom = new TableColumn<>("Nom");
-        nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
-
-        TableColumn<Produit, Integer> qte = new TableColumn<>("Qte");
-        qte.setCellValueFactory(new PropertyValueFactory<>("qte"));
-
-        TableColumn<Produit, Double> prix = new TableColumn<>("Prix");
-        prix.setCellValueFactory(new PropertyValueFactory<>("prix"));
-
-        tableViewPanier.getColumns().addAll(nom,qte,prix);
+        final ObservableList<Panier> data = FXCollections.observableArrayList(panierClient);
+        nom.setCellValueFactory(new PropertyValueFactory<Panier, String>("nom"));
+        qte.setCellValueFactory(new PropertyValueFactory<Panier, Integer>("choiceBox"));
+        prix.setCellValueFactory(new PropertyValueFactory<Panier, Double>("prix"));
+        tableViewPanier.setItems(data);
         addButtonToTable();
+        setDefaultValueChoiceBox();
+        updatePanier();
     }
 
-    public void createPanier(){
-        this.panier.put(new Produit(5,1,"test","nameTest",10,46),2);
-        this.panier.put(new Produit(6,1,"test2","nameTest2",11,46),4);
-        this.panier.put(new Produit(7,1,"test3","nameTest3",12,46),6);
+
+
+    @FXML
+    void toMagasin() throws IOException, SQLException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../vues/Magasin.fxml"));
+        MagasinController magasinController;
+        AnchorPane root = null;
+        magasinController = new MagasinController(this.client, this.lastMagasin, this.panierClient);
+        fxmlLoader.setController(magasinController);
+        try{
+            root = fxmlLoader.load();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        Stage appStage = (Stage) tableViewPanier.getScene().getWindow();
+        appStage.setScene(scene);
+        appStage.setTitle(this.lastMagasin.getNomMagasin());
+        magasinController.controlerPassing(appStage);
+        Tools.initMagasin(this.lastMagasin.getIdMagasin(), appStage, this.serveurMagasin, this.panierClient);
+        appStage.show();
     }
+
+
+    @FXML
+    void toFacture() throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../vues/Facture.fxml"));
+        FactureController facture = new FactureController(this.client, this.panierClient, this.lastMagasin);
+        AnchorPane root = null;
+        fxmlLoader.setController(facture);
+        try {
+            root = fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        Stage appStage = (Stage) sousTotal.getScene().getWindow();
+        appStage.setScene(scene);
+        appStage.setTitle("Facture");
+        appStage.show();
+    }
+
+
+
 
     private void addButtonToTable() {
-        TableColumn<Data, Void> colBtn = new TableColumn("Edit");
-        Callback<TableColumn<Data, Void>, TableCell<Data, Void>> cellFactory = new Callback<TableColumn<Data, Void>, TableCell<Data, Void>>() {
+        Callback<TableColumn<Panier, Void>, TableCell<Panier, Void>> cellFactory = new Callback<TableColumn<Panier, Void>, TableCell<Panier, Void>>() {
             @Override
-            public TableCell<Data, Void> call(final TableColumn<Data, Void> param) {
-                final TableCell<Data, Void> cell = new TableCell<Data, Void>() {
-                    private final Button btn = new Button("Supprimer");
+            public TableCell<Panier, Void> call(final TableColumn<Panier, Void> param) {
+                final TableCell<Panier, Void> cell = new TableCell<Panier, Void>() {
+
+                    private final Button btn = new Button("supprimer");
+
                     {
                         btn.setOnAction((ActionEvent event) -> {
-                            Data data = getTableView().getItems().get(getIndex());
-                            System.out.println("selectedData: " + data);
+                            Panier produit = getTableView().getItems().get(getIndex());
+                            getTableView().getItems().remove(produit);
+                            Panier p = panierClient.stream()
+                                    .filter(panier -> produit.getIdProduit() == (panier.getIdProduit()))
+                                    .findAny()
+                                    .orElse(null);
+                            panierClient.remove(p);
+                            updatePanier();
                         });
                     }
+
                     @Override
                     public void updateItem(Void item, boolean empty) {
                         super.updateItem(item, empty);
@@ -108,73 +152,20 @@ public class PanierController {
                 return cell;
             }
         };
-        colBtn.setCellFactory(cellFactory);
-        tableViewPanier.getColumns().add(colBtn);
+        edit.setCellFactory(cellFactory);
     }
 
+    private void setDefaultValueChoiceBox() {
+        panierClient.forEach((panier) -> {
+            panier.setDefaultValueChoiceBox();
+        });
+    }
 
+    private void updatePanier() {
+        double prixTotal = this.panierClient.stream().mapToDouble(panier -> panier.getPrix()*panier.getQteClient()).sum();
+        int quantity = this.panierClient.stream().mapToInt(Panier::getQteClient).sum();
+        sousTotal.setText("Sous-total ("+quantity+" articles): "+prixTotal+" euro(s)");
+    }
 
-
-
-//
-//    public void createPanier(){
-//        this.panier.put(new Produit(5,1,"test","nameTest",10,46),2);
-//        this.panier.put(new Produit(6,1,"test2","nameTest2",11,46),4);
-//        this.panier.put(new Produit(7,1,"test3","nameTest3",12,46),6);
-//    }
-//
-//    private void initTableview(){
-//        initColonne();
-//    }
-//
-//    public void initColonne(){
-//        //int idProduit;
-//        //	int idMagasin;
-//        //	String imageProduit;
-//        //	String nom;
-//        //	double prix;
-//        //	int quantite;
-//        nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
-//        qte.setCellValueFactory(new PropertyValueFactory<>("qte"));
-//        prix.setCellValueFactory(new PropertyValueFactory<>("prix"));
-//        edit.setCellValueFactory(new PropertyValueFactory<>("edit"));
-//
-//        editableCols();
-//    }
-//
-//    private void editableCols() {
-//        nom.setCellFactory(TextFieldTableCell.forTableColumn());
-//        nom.setOnEditCommit(e->{
-//            e.getTableView().getItems().get(e.getTablePosition().getRow()).setNom(e.getNewValue());
-//        });
-//
-//        qte.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
-//        qte.setOnEditCommit(e->{
-//            e.getTableView().getItems().get(e.getTablePosition().getRow()).setQuantite(e.getNewValue());
-//        });
-//
-//        prix.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
-//        prix.setOnEditCommit(e->{
-//            e.getTableView().getItems().get(e.getTablePosition().getRow()).setPrix(e.getNewValue());
-//        });
-//
-//        tableViewPanier.setEditable(true);
-//    }
-//
-//    private void loadData(){
-//        ObservableList<HashMap<Produit, Integer>> data_table = FXCollections.observableArrayList();
-//        data_table.addAll(this.panier);
-//        tableViewPanier.setItems(data_table);
-//    }
-
-
-
-
-
-
-
-
-
-
-
+    
 }

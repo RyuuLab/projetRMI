@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -24,12 +25,14 @@ import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import model.ClientMagasin;
 import model.Magasin;
+import model.Panier;
 import model.Produit;
 import serveurs.magasin.interfaces.MagasinInterface;
 
 public class ConnexionController {
 	private MagasinInterface serveurMagasin = ConnectToServeur.magasin();
-	private HashMap<Produit, Integer> panier = new HashMap<Produit, Integer>();
+	private ObservableList<Produit> p;
+	private ArrayList<Panier> panierClient = new ArrayList<Panier>();
 	private ClientMagasin client;
 	private Magasin magasin;
 
@@ -87,7 +90,7 @@ public class ConnexionController {
 				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../vues/Magasin.fxml"));
 				MagasinController magasinController;
 				AnchorPane root = null;
-				magasinController = new MagasinController(this.client, this.magasin, this.panier);
+				magasinController = new MagasinController(this.client, this.magasin, panierClient);
 				fxmlLoader.setController(magasinController);
 				try{
 					root = fxmlLoader.load();
@@ -100,7 +103,7 @@ public class ConnexionController {
 				appStage.setScene(scene);
 				appStage.setTitle(this.magasin.getNomMagasin());
 				magasinController.controlerPassing(appStage);
-				Tools.initMagasin(this.magasin.getIdMagasin(), appStage, this.serveurMagasin);
+				Tools.initMagasin(this.magasin.getIdMagasin(), appStage, this.serveurMagasin, null);
 				appStage.show();
 			} else {
 				erreur.setText("Identifiant ou mdp incorrect");

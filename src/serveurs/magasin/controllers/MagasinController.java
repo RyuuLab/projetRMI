@@ -3,9 +3,11 @@ package serveurs.magasin.controllers;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import model.ClientMagasin;
 import model.Magasin;
+import model.Panier;
 import model.Produit;
 import serveurs.DAO.ClientMagasinDAO;
 import serveurs.DAO.MagasinDAO;
@@ -47,5 +49,15 @@ public class MagasinController extends UnicastRemoteObject implements MagasinInt
 	@Override
 	public boolean removeQuantityProduit(int idProduit, int quantite) throws RemoteException, SQLException {
 		return ProduitDAO.removeQuantityProduit(idProduit, quantite);
+	}
+
+	@Override
+	public boolean setQuantityProduit(int idProduit, int quantite) throws RemoteException, SQLException {
+		return ProduitDAO.setQuantityProduit(idProduit, quantite);
+	}
+
+	@Override
+	public double calculPanier(ArrayList<Produit> produits) throws RemoteException {
+		return produits.stream().mapToDouble(panier -> panier.getPrix()*panier.getQuantite()).sum();
 	}
 }
